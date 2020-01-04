@@ -10,9 +10,9 @@ import {Register} from '../screens/Register';
 import {Products} from '../screens/Products';
 
 export const ScreensStack = createStackNavigator({
-  // Welcome,
-  // Forgot,
-  // Register,
+  Welcome,
+  Forgot,
+  Register,
   Products,
 }, {
   defaultNavigationOptions: {
