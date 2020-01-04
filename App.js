@@ -41,15 +41,16 @@ export default function App(props) {
 async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
+      require('./assets/images/leaf_original.png'),
       require('./assets/images/what_leaf.png'),
       require('./assets/images/banana_leaf.png'),
-      require('./assets/images/powder_pack.png'),
       require('./assets/images/olive_branch.png'),
-      require('./assets/images/murungai-leaf-powder.png')
+      require('./assets/images/murungai-leaf-powder.png'),
+      require('./assets/images/powder_pack.png'),
     ]),
     Font.loadAsync({
       'inria-serif-regular': require('./assets/fonts/InriaSerif-Regular.ttf'),
-      'lato-regular': require('./assets/fonts/Lato-Regular.ttf')
+      'lato-regular': require('./assets/fonts/Lato-Regular.ttf'),
     })
   ])
 }
