@@ -26,6 +26,7 @@ export const Register = (props) => {
   const handleRegister = () => {
     setIsLoading(true);
     navigation.navigate('Products');
+    setIsLoading(false);
   };
 
   const renderRegister = () => (
@@ -114,8 +115,8 @@ const styles = StyleSheet.create({
   },
   registerLabel: {
     fontSize: 14, 
-    fontWeight: '500',
-    color: '#ccc',
+    color: '#ddd',
+    marginTop: 16,
   },
   registerInput: {
     fontFamily: 'inria-serif-regular',
