@@ -63,8 +63,8 @@ export function Welcome(props) {
   // ==== Login section ====
   const {navigation}   = props;
 
-  const VALID_EMAIL    = "contact@react-ui-kit.com";
-  const VALID_PASSWORD = "subscribe";
+  const VALID_EMAIL    = "sontung_mtp@gmail.com";
+  const VALID_PASSWORD = "sontung";
   const [email, setEmail]         = useState(VALID_EMAIL);
   const [password, setPassword]   = useState(VALID_PASSWORD);
   const [error, setError]         = useState('');
@@ -79,6 +79,7 @@ export function Welcome(props) {
       if (password !== VALID_PASSWORD) 
         throw "Wrong email or password!";
 
+      setError('');
       navigation.navigate('Products');
       setIsLoading(false);
     } catch (err) {
@@ -103,7 +104,8 @@ export function Welcome(props) {
   const renderLogin = () => (
     <ViewBlock flex={1} style={{marginLeft: 35}}>
       <Input
-        leftIcon={<Ionicons name="ios-mail" size={20} color="#ccc" />}
+        leftIcon={<Ionicons name="ios-mail" size={20} color="#b4bcad" />}
+        inputContainerStyle={styles.loginContainerStyle}
         inputStyle={styles.loginInput}
         errorMessage={error}
         defaultValue={email}
@@ -111,7 +113,8 @@ export function Welcome(props) {
       />
       <Input
         secureTextEntry={true}
-        leftIcon={<Ionicons name="md-key" size={20} color="#ccc" />}
+        leftIcon={<Ionicons name="md-key" size={20} color="#b4bcad" />}
+        inputContainerStyle={styles.loginContainerStyle}
         inputStyle={[styles.loginInput, hasError()]}
         defaultValue={password}
         onChangeText={(text) => {setPassword(text)}}
@@ -169,7 +172,8 @@ Welcome.navigationOptions = {
 const styles = StyleSheet.create({
   // Wrapper ---------------------
   wrapper: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'flex-end',
   },
 
   // Header ----------------------
@@ -208,6 +212,10 @@ const styles = StyleSheet.create({
 
 
   // Login ------------------------
+  loginContainerStyle: {
+    marginTop: 24,
+    borderBottomColor: '#ddd',
+  },
   loginInput: {
     fontFamily: 'inria-serif-regular',
     color: '#546a46',
@@ -217,8 +225,8 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     backgroundColor: '#BFAC5C',
-    padding: 20,
-    width: 225,
+    padding: 22,
+    width: 200,
     justifyContent: 'center',
     alignItems: 'center',
     position: "absolute",
@@ -236,6 +244,7 @@ const styles = StyleSheet.create({
   loginTextBtn: {
     fontFamily: 'inria-serif-regular',
     fontSize: 13,
+    marginTop: 5,
   },
   loginForgot: {
     color: '#aaa',
