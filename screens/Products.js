@@ -11,9 +11,11 @@ const {width, height} = Dimensions.get('window');
 export const Products = () => {
   const renderHeader = () => (
     <ViewBlock flex={1} > 
-      <Ionicons name="md-menu" size={40} color="#BFAC5C" 
-        style={{marginTop: 55, marginLeft: 35}}
-      />
+      <TouchableOpacity>
+        <Ionicons name="md-menu" size={40} color="#BFAC5C" 
+          style={{marginTop: 55, marginLeft: 35}}
+        />
+      </TouchableOpacity>
       <ViewBlock row justify='space-between' >
         <ViewBlock>
           <Text style={styles.headerGreeting}>
@@ -52,34 +54,32 @@ export const Products = () => {
       },
     ];
 
-      // <ViewBlock flex={1} row justify='space-around' align='center'
-      //   style={{marginLeft: 35}}
-      // >
     return (
-      <View style={{width: 300, flex: 1}}>
-        <ScrollView 
-          horizontal
-          behavior='width'
-          style={{marginTop: '5%', flx: 1}}
-        >
-          {products.map((product, idx) => (
-            <ViewBlock key={idx}>
-              <Image
-                style={styles.productThumb}
-                source={product.thumb}
-              />
-              <View style={styles.productBackground} >
-                <Text style={styles.productName} >
-                  {product.name}
-                </Text>
-                <Text style={styles.productPrice} >
-                  $ {product.price}
-                </Text>
-              </View>
-            </ViewBlock>
-          ))}
-        </ScrollView>
-      </View>
+      <ViewBlock flex={1} row justify='space-around' align='center'
+        style={{marginLeft: 35}}
+      >
+        {products.map((product, idx) => (
+          <ViewBlock key={idx}>
+            <Image
+              style={styles.productThumb}
+              source={product.thumb}
+            />
+            <View style={styles.productBackground} >
+              <Text style={styles.productName} >
+                {product.name}
+              </Text>
+              <Text style={styles.productPrice} >
+                $ {product.price}
+              </Text>
+            </View>
+            <View style={styles.productBtnBlock}>
+              <TouchableOpacity style={styles.productBtn}>
+                <Text style={styles.productPlusSign}>+</Text>
+              </TouchableOpacity>
+            </View>
+          </ViewBlock>
+        ))}
+      </ViewBlock>
     );
   };
 
@@ -92,7 +92,7 @@ export const Products = () => {
     };
 
     return (
-      <ViewBlock flex={0.7} row 
+      <ViewBlock flex={0.55} row 
         style={styles.mixBlock}
       >
         <ViewBlock flex={1}>
@@ -112,7 +112,7 @@ export const Products = () => {
           </Text>
         </ViewBlock>
         {/* == Price block == */}
-        <ViewBlock flex={1}>
+        <ViewBlock flex={1} justify='space-between' align='center' >
           <Text style={styles.mixPrice} >
             $ {specialMix.price}
           </Text>
@@ -197,6 +197,12 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginBottom: 15
   },
+  // Product Button
+  productBtnBlock: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+  },
   productBtn: {
     width: 30,
     height: 30,
@@ -213,7 +219,7 @@ const styles = StyleSheet.create({
   // Special Mix ------------------------------------------------------------
   mixBlock: {
     marginLeft: 35,
-    borderTopColor: '#ccc',
+    borderTopColor: '#eee',
     borderTopWidth: 1,
     alignItems: 'center',
   },
@@ -247,9 +253,11 @@ const styles = StyleSheet.create({
   mixPrice: {
     color: '#BFAC5C',
     fontSize: 14,
+    marginBottom: 5,
   },
   mixButton: {
     borderWidth: 1,
     borderColor: '#BFAC5C',
+    marginTop: 10,
   }
 });
