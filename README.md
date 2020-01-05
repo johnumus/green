@@ -1,9 +1,24 @@
-# Green ▪ `react-native`
+# Green
+`react-native`
+
 - **Design:** [Green Mobile app] on dribbble.com
 - **Designer:** [Anastasia Marinicheva]
 
 [Green Mobile app]: https://dribbble.com/shots/6930348-Green-Mobile-App
 [Anastasia Marinicheva]: https://dribbble.com/anmarinicheva
+
+---
+
+<p align='middle'>
+  <img src="https://imgur.com/P2kjZT6.png" width="300" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://imgur.com/7S8FQwe.png" width="300" /> 
+</p>
+<p align='middle'>
+  <img src="https://imgur.com/lvulPVX.png" width="300" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://imgur.com/y4ijCoA.png" width="300" /> 
+</p>
 
 
 ## File structure
@@ -46,5 +61,12 @@
 [Products.js]: ./screens/Products.js
 
 ## Todo
+- [ ] password show/hide
 
 ## Fixme
+### KeyboardAvoidingView
+- `` use align self for button in welcome
+
+### - screens/Products.js
+- `<ScrollView>` with `horizontal` for products.
+
